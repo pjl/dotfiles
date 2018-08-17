@@ -1,0 +1,13 @@
+# Whether to automatically copy selected text to the clipboard
+#
+# The value clipboard will always copy text to the selection clipboard as
+# well as the system clipboard.
+copy-on-select = clipboard
+
+# Whether or not to quit after the last surface is closed
+quit-after-last-window-closed = true
+
+# A theme to use
+#
+# To see a list of available themes, run `ghostty +list-themes`.
+theme = Snazzy
