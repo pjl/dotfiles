@@ -1,5 +1,5 @@
 typeset -U fpath
-fpath=(~/.zfunctions $fpath)
+fpath=(~/.zfunctions/pure $fpath)
 fpath=($^fpath(-/N))
 
 if [[ "$OSTYPE" = darwin* ]]; then
