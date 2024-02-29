@@ -1,0 +1,22 @@
+[diff]
+  algorithm = histogram
+
+[init]
+  defaultBranch = main
+
+[merge]
+  conflictStyle = zdiff3
+
+[pull]
+  ff = only
+
+[push]
+  autoSetupRemote = true
+  default = simple
+
+[transfer]
+  fsckObjects = true
+
+[user]
+  email = perry@atwhim.com
+  name = Perry Lee
