@@ -1,6 +1,6 @@
 set all&
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale', { 'as': 'vim-ale' }
 Plug 'itchyny/lightline.vim', { 'as': 'vim-lightline' }
