@@ -7,7 +7,6 @@ Plug 'itchyny/lightline.vim', { 'as': 'vim-lightline' }
 Plug 'junegunn/fzf', { 'as': 'vim-fzf' }
 Plug 'junegunn/fzf.vim', { 'as': 'vim-fzf.vim' }
 Plug 'morhetz/gruvbox', { 'as': 'vim-gruvbox' }
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
