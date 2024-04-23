@@ -28,7 +28,7 @@ elif [[ -d /usr/share/doc/fzf/examples ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
-HISTFILE=~/.zhistory
+HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=10000
 
