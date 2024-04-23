@@ -1,11 +1,23 @@
 # Emit color codes only when standard output is connected to a terminal.
 alias ls='ls --color=auto'
 
-typeset -U fpath
-fpath=(~/.zfunctions/pure $fpath)
-fpath=($^fpath(-/N))
+# Keep only the first occurrence of each duplicated value. For variables with
+# shared values it is recommended to set the flag for all interfaces.
+typeset -U FPATH fpath
 
-autoload -U compinit && compinit
+# An array (colon separated list) of directories specifying the search path
+# for function definitions
+fpath=(~/.zfunctions/pure $fpath)
+
+# Remove nonexistent directories.
+fpath=(${^fpath}(-/N))
+
+# Initialize completion.
+# * The usual alias expansion during reading will be suppressed if the
+#   autoload builtin or its equivalent is given the option -U. This is
+#   recommended for the use of functions supplied with the zsh distribution.
+# * The flag -z marks the function to be autoloaded using the zsh style.
+autoload -Uz compinit && compinit
 
 # Set up fzf key bindings and fuzzy completion.
 if [[ -d /opt/local/share/fzf/shell ]]; then
