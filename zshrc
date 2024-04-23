@@ -7,12 +7,13 @@ fpath=($^fpath(-/N))
 
 autoload -U compinit && compinit
 
-if [[ -f /opt/local/share/zsh/site-functions/fzf ]]; then
-    source /opt/local/share/zsh/site-functions/fzf
-fi
-
-if [[ -f /opt/local/share/fzf/shell/key-bindings.zsh ]]; then
-    source /opt/local/share/fzf/shell/key-bindings.zsh
+# Set up fzf key bindings and fuzzy completion.
+if [[ -d /opt/local/share/fzf/shell ]]; then
+  source /opt/local/share/fzf/shell/completion.zsh
+  source /opt/local/share/fzf/shell/key-bindings.zsh
+elif [[ -d /usr/share/doc/fzf/examples ]]; then
+  source /usr/share/doc/fzf/examples/completion.zsh
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
 HISTFILE=~/.zhistory
