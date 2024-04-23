@@ -7,7 +7,7 @@ unsetopt GLOBAL_RCS
 typeset -U PATH path
 
 # An array (colon-separated list) of directories to search for commands
-path=(${HOME}/bin /{opt,usr}/local/{bin,sbin} $path)
+path=(~/bin /{opt,usr}/local/{bin,sbin} $path)
 
 # Remove nonexistent directories.
 # * '${^path}' turns on the RC_EXPAND_PARAM option for the evaluation of path.
