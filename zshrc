@@ -1,12 +1,9 @@
+# Emit color codes only when standard output is connected to a terminal.
+alias ls='ls --color=auto'
+
 typeset -U fpath
 fpath=(~/.zfunctions/pure $fpath)
 fpath=($^fpath(-/N))
-
-if [[ "$OSTYPE" = darwin* ]]; then
-    alias ls='ls -G'
-else
-    alias ls='ls --color=auto'
-fi
 
 autoload -U compinit && compinit
 
