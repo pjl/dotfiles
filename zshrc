@@ -74,5 +74,12 @@ setopt HIST_VERIFY
 # in effect).
 setopt SHARE_HISTORY
 
-autoload -U promptinit && promptinit
+# Initialize prompt themes.
+autoload -Uz promptinit && promptinit
+
+# The max execution time of a process before its run time is shown when it
+# exits
+PURE_CMD_MAX_EXEC_TIME=1
+
+# Set the prompt theme.
 prompt pure
