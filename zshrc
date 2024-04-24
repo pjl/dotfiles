@@ -28,17 +28,51 @@ elif [[ -d /usr/share/doc/fzf/examples ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
+# The file to save the history in when an interactive shell exits
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=10000
 
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history
+# The maximum number of events stored in the internal history list
+#
+# If you use the HIST_EXPIRE_DUPS_FIRST option, setting this value larger than
+# the SAVEHIST size will give you the difference as a cushion for saving
+# duplicated history events.
+HISTSIZE=125000
+
+# The maximum number of history events to save in the history file
+SAVEHIST=100000
+
+# Save each command's beginning timestamp (in seconds since the epoch) and the
+# duration (in seconds) to the history file.
+setopt EXTENDED_HISTORY
+
+# If the internal history needs to be trimmed to add the current command line,
+# setting this option will cause the oldest history event that has a duplicate
+# to be lost before losing a unique event from the list.
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Do not enter command lines into the history list if they are duplicates of
+# the previous event.
+setopt HIST_IGNORE_DUPS
+
+# Remove command lines from the history list when the first character on the
+# line is a space, or when one of the expanded aliases contains a leading
+# space.
+setopt HIST_IGNORE_SPACE
+
+# Remove superfluous blanks from each command line being added to the history
+# list.
+setopt HIST_REDUCE_BLANKS
+
+# Whenever the user enters a line with history expansion, don't execute the
+# line directly; instead, perform history expansion and reload the line into
+# the editing buffer.
+setopt HIST_VERIFY
+
+# This option both imports new commands from the history file, and also causes
+# your typed commands to be appended to the history file (the latter is like
+# specifying INC_APPEND_HISTORY, which should be turned off if this option is
+# in effect).
+setopt SHARE_HISTORY
 
 autoload -U promptinit && promptinit
 prompt pure
