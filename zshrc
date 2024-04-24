@@ -28,6 +28,27 @@ elif [[ -d /usr/share/doc/fzf/examples ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
+# Set up rbenv.
+if [[ -d ~/.rbenv ]]; then
+  export RBENV_SHELL=zsh
+  source ~/.rbenv/completions/rbenv.zsh
+  command rbenv rehash 2>/dev/null
+  rbenv() {
+    local command
+    command="${1:-}"
+    if [ "$#" -gt 0 ]; then
+      shift
+    fi
+
+    case "$command" in
+    rehash|shell)
+      eval "$(rbenv "sh-$command" "$@")";;
+    *)
+      command rbenv "$command" "$@";;
+    esac
+  }
+fi
+
 # The file to save the history in when an interactive shell exits
 HISTFILE=~/.zsh_history
 
