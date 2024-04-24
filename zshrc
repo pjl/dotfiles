@@ -28,6 +28,13 @@ elif [[ -d /usr/share/doc/fzf/examples ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
+# Set up nvm.
+if [[ -d ~/.nvm ]]; then
+  export NVM_DIR="${HOME}/.nvm"
+  source "${NVM_DIR}/nvm.sh"
+  source "${NVM_DIR}/bash_completion"
+fi
+
 # Set up rbenv.
 if [[ -d ~/.rbenv ]]; then
   export RBENV_SHELL=zsh
