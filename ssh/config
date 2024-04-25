@@ -5,7 +5,6 @@
 # A single '*' as a pattern can be used to provide global defaults for all
 # hosts.
 Host *
-
   # Indicates that ssh should hash host names and addresses when they are
   # added to ~/.ssh/known_hosts
   HashKnownHosts yes
