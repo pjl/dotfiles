@@ -9,6 +9,10 @@ Host *
   # added to ~/.ssh/known_hosts
   HashKnownHosts yes
 
+  # Specifies the UNIX-domain socket used to communicate with the
+  # authentication agent
+  # IdentityAgent ~/.1password/agent.sock
+
   # On macOS, specifies whether the system should search for passphrases in
   # the user's keychain when attempting to use a particular key
   # UseKeychain yes
