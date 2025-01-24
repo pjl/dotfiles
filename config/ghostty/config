@@ -1,0 +1,9 @@
+# Whether to automatically copy selected text to the clipboard
+copy-on-select = true
+
+# Whether or not to quit after the last surface is closed
+quit-after-last-window-closed = true
+
+# A theme to use
+# To see a list of available themes, run `ghostty +list-themes`.
+theme = catppuccin-mocha
