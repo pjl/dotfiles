@@ -8,5 +8,6 @@ copy-on-select = clipboard
 quit-after-last-window-closed = true
 
 # A theme to use
+#
 # To see a list of available themes, run `ghostty +list-themes`.
 theme = catppuccin-mocha
