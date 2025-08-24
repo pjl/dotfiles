@@ -7,7 +7,7 @@ typeset -U FPATH fpath
 
 # An array (colon separated list) of directories specifying the search path
 # for function definitions
-fpath=(~/.zfunctions/pure $fpath)
+fpath=(~/.zfunctions ~/.zfunctions/pure $fpath)
 
 # Remove nonexistent directories.
 fpath=(${^fpath}(-/N))
